@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SayHello } from "./page";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,6 +24,17 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="bg-red-500 flex space-x-4">
+            <div>
+              <Link href={'/'}>
+            Navbar
+            </Link>
+              
+            </div>
+            <Link href={'/cond-rendering'}>
+            conditional Rendering
+            </Link>
+        </div>
         {children}
         
       </body>
